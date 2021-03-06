@@ -26,4 +26,4 @@
 
 > ## 連結
 
-4. [CodePen](https://codepen.io/Clare46/pen/GRjdVVv)
+1. [CodePen](https://codepen.io/Clare46/pen/GRjdVVv)
