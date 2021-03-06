@@ -1,0 +1,115 @@
+html,
+body {
+  font-family: "Lato", "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  background-color: #f6f7f8;
+  min-width: 540px;
+}
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+/* Header */
+header {
+  height: 60px;
+  color: #666666;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+}
+
+nav {
+  height: 100%;
+  padding: 0 20px;
+}
+
+.nav-title {
+  font-weight: bold;
+  letter-spacing: 1px;
+  vertical-align: middle;
+}
+
+/*說明*/
+.explain {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*小標題*/
+#inputTodo > h5 {
+  background-color: #e95453;
+}
+
+#firstTodo span {
+  background-color: #ef515f;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#secondTodo span {
+  background-color: #f4838a;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#thirdTodo span {
+  background-color: #fbd0ca;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#lastTodo span {
+  background-color: #fde4dc;
+  font-weight: bold;
+}
+
+#doneTodo > h5 {
+  background-color: #83e1bf;
+  color: #131111;
+}
+
+#firstDone span {
+  background-color: #2fc580;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#secondDone span {
+  background-color: #1dd39b;
+
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#thirdDone span {
+  background-color: #a3e9cf;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#lastDone span {
+  background-color: #d0f5e8;
+  font-weight: bold;
+}
+
+/*項目*/
+
+li > label[for="todo"] {
+  width: 95%;
+}
+
+.checked {
+  color: #ccc;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.fa-check-square {
+  color: darkgreen;
+}
