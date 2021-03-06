@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My Todo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="styless.css">
+</head>
+  <body>
+      <div class="container">
+        <div class="row">
+          <header class=" col-12">
+            <nav>
+                <p class="nav-title h1">My Todo.</p>
+            </nav>
+          </header>
+        </div>
+
+        <div id = "inputTodo" class="mt-3"> 
+          <h5 class="p-3 mb-2 text-center text-white">新增代辦事項</h5>
+          <div class="row p-3 justify-content-center">
+            <div class="input-group col col-10">
+              <div class="input-group-prepend">
+                <button id="dropdownMenuButton" class="btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">事件分類</button>
+                <div id="category" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">重要且緊急</a>
+                    <a class="dropdown-item" href="#">重要但不緊急</a>
+                    <a class="dropdown-item" href="#">不重要但緊急</a>
+                    <a class="dropdown-item" href="#">不重要也不緊急</a>
+                </div>
+              </div>
+              <input type="text" placeholder="新增事項" id="newTodo" class=" form-control border-info">
+            </div>
+            <div class="col col-lg-2 pl-0">
+              <button id="addBtn" class="btn btn-outline-info col-12">新增</button>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-start align-items-center border-0 explain">
+                <span class="badge badge-primary badge-pill mr-1">1</span>
+                搜尋框輸入關鍵字可搜尋所有該分類含此關鍵字的事項          
+              </li>
+              <li class="list-group-item d-flex justify-content-start align-items-center border-0 explain">
+                <span class="badge badge-primary badge-pill mr-1">2</span>
+                點擊<i class="fas fa-redo-alt mr-1 ml-1"></i>可重新展出該分類所有事項
+              </li>
+              <li class="list-group-item d-flex justify-content-start align-items-center border-0 explain">
+                <span class="badge badge-primary badge-pill mr-1">3</span>
+                點擊<i class="fa fa-trash mr-1 ml-1"></i>可刪除該事項
+              </li>
+              <li class="list-group-item d-flex justify-content-start align-items-center border-0 explain">
+                <span class="badge badge-primary badge-pill mr-1">4</span>
+                點擊事項文字代表完成該事項，完成事項會送至對應的已完成代辦事項列表
+              </li>              
+            </ul>
+          </div>
+          <div id="inputTodoContent" class="row pl-4 pr-4 ">
+            <div id="firstTodo" class="col-12 col-lg-6 p-2 border border-dark  rounded">
+              <div class="row pl-3 pr-2">
+                <span class="col col-lg-4  text-center text-white pt-3 mb-0 rounded-lg">重要且緊急</span>
+                <div class="col col-lg-8 pl-0 pt-3 pr-2">
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="搜尋" data-panel="first-todo">
+                      <div class="input-group-append">
+                        <button class="btn btn-info border border-right search" type="button">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-info border border-left redo" type="button">
+                          <i class="fas fa-redo-alt"></i>
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <ul id="first-todo" class="list-group list-group-flush">
+              </ul>
+            </div>
+            <div id="secondTodo" class="col-12 col-lg-6 p-2 border border-dark  rounded">
+              <div class="row pl-3 pr-2">
+                <span class="col col-lg-4  text-center text-white pt-3 mb-0 rounded-lg">重要但不緊急</span>
+                <div class="col col-lg-8 pl-0 pt-3 pr-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜尋" data-panel="second-todo">
+                    <div class="input-group-append">
+                      <button class="btn btn-info border border-right search" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                      <button class="btn btn-info border border-left redo" type="button">
+                        <i class="fas fa-redo-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <ul id="second-todo" class="list-group list-group-flush">
+              </ul>
+            </div>
+            <div id="thirdTodo" class="col-12 col-lg-6 p-2 border border-dark  rounded">
+              <div class="row pl-3 pr-2">
+                <span class="col col-lg-4  text-center pt-3 mb-0 rounded-lg">不重要但緊急</span>
+                <div class="col col-lg-8 pl-0 pt-3 pr-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜尋" data-panel="third-todo">
+                    <div class="input-group-append">
+                      <button class="btn btn-info border border-right search" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                      <button class="btn btn-info border border-left redo" type="button">
+                        <i class="fas fa-redo-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <ul id="third-todo" class="list-group list-group-flush">
+              </ul>
+            </div>
+            <div id="lastTodo" class="col-12 col-lg-6 p-2 border border-dark  rounded">
+              <div class="row pl-3 pr-2">
+                <span class="col col-lg-4  text-center pt-3 mb-0 rounded-lg">不重要也不緊急</span>
+                <div class="col col-lg-8 pl-0 pt-3 pr-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜尋" data-panel="last-todo">
+                    <div class="input-group-append">
+                      <button class="btn btn-info border border-right search" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                      <button class="btn btn-info border border-left redo" type="button">
+                        <i class="fas fa-redo-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <ul id="last-todo" class="list-group list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div id="doneTodo" class="mt-3">
+          <h5 class="p-3 mb-2 text-center">已完成代辦事項</h5>
+          <div id="doneTodoContent" class="row pl-4 pr-4 pt-3">
+            <div id="firstDone" class="col-12 col-lg-6 p-2 border border-dark  rounded">
+              <div class="row pl-3 pr-2">
+                <span class="col col-lg-4  text-center text-white pt-3 mb-0 rounded-lg">重要且緊急</span>
+                <div class="col col-lg-8 pl-0 pt-3 pr-2">
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="搜尋" data-panel="first-done">
+                      <div class="input-group-append">
+                        <button class="btn btn-info border border-right search" type="button">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-info border border-left redo" type="button">
+                          <i class="fas fa-redo-alt"></i>
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <ul id="first-done" class="list-group list-group-flush">
+              </ul>
+            </div>
+            <div id="secondDone" class="col-12 col-lg-6 p-2 border border-dark  rounded">
+              <div class="row pl-3 pr-2">
+                <span class="col col-lg-4  text-center text-white pt-3 mb-0 rounded-lg">重要但不緊急</span>
+                <div class="col col-lg-8 pl-0 pt-3 pr-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜尋" data-panel="second-done">
+                    <div class="input-group-append">
+                      <button class="btn btn-info border border-right search" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                      <button class="btn btn-info border border-left redo" type="button">
+                        <i class="fas fa-redo-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <ul id="second-done" class="list-group list-group-flush">
+              </ul>
+            </div>
+            <div id="thirdDone" class="col-12 col-lg-6 p-2 border border-dark  rounded">
+              <div class="row pl-3 pr-2">
+                <span class="col col-lg-4  text-center pt-3 mb-0 rounded-lg">不重要但緊急</span>
+                <div class="col col-lg-8 pl-0 pt-3 pr-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜尋" data-panel="third-done">
+                    <div class="input-group-append">
+                      <button class="btn btn-info border border-right search" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                      <button class="btn btn-info border border-left redo" type="button">
+                        <i class="fas fa-redo-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <ul id="third-done" class="list-group list-group-flush">
+              </ul>
+            </div>
+            <div id="lastDone" class="col-12 col-lg-6 p-2 border border-dark  rounded">
+              <div class="row pl-3 pr-2">
+                <span class="col col-lg-4  text-center pt-3 mb-0 rounded-lg">不重要也不緊急</span>
+                <div class="col col-lg-8 pl-0 pt-3 pr-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜尋" data-panel="last-done">
+                    <div class="input-group-append">
+                      <button class="btn btn-info border border-right search" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                      <button class="btn btn-info border border-left redo" type="button">
+                        <i class="fas fa-redo-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <ul id="last-done" class="list-group list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
